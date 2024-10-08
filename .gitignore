@@ -1,0 +1,9 @@
+/Student.API/bin
+/Student.API/obj
+/Student.Application/bin
+/Student.Application/obj
+/Student.Domain/bin
+/Student.Domain/obj
+/Student.Infrastructure/bin
+/Student.Infrastructure/obj
+/.vs
