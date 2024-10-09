@@ -1,7 +1,8 @@
 ﻿namespace Student.Domain
 {
-    public class Student
+    public class StudentInfo
     {
+        public int Id { get; set; }
         public string? Name { get; set; } = null;
         public string? Department { get; set; } = null;
         public string? Section { get; set; } = null;

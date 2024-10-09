@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Student.Application.Services;
+using Student.Application.Services.Interfaces;
+using Student.Domain;
 
 namespace Student.API.Controllers
 {
@@ -14,9 +15,15 @@ namespace Student.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IList<Domain.Student>> GetAllStudents()
+        public async Task<ActionResult<IList<StudentInfo>>> GetAllStudents()
         {
-            return Ok(this._studentService.GetAllStudents());
+            return Ok(await _studentService.GetAllStudentAsync());
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<StudentInfo>> CreateStudent(StudentInfo student)
+        {
+            return Ok(await _studentService.CreateStudentAsync(student));
         }
     }
 }

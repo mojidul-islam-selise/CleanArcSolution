@@ -1,4 +1,6 @@
 ﻿using Student.Application.Repositories;
+using Student.Application.Services.Interfaces;
+using Student.Domain;
 
 namespace Student.Application.Services
 {
@@ -9,9 +11,15 @@ namespace Student.Application.Services
         {
             this._studentrepository = studentrepository;
         }
-        public List<Domain.Student> GetAllStudents()
+
+        public async Task<StudentInfo> CreateStudentAsync(StudentInfo studentInfo)
         {
-            return _studentrepository.GetAllStudents();
+            return await _studentrepository.CreateStudentAsync(studentInfo);
+        }
+
+        public async Task<IReadOnlyList<StudentInfo>> GetAllStudentAsync()
+        {
+            return await _studentrepository.GetAllStudentAsync();
         }
     }
 }
